@@ -1,10 +1,20 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    It's {{ title }}!
-  </h1>
+  <h1>{{ title }} + {{page}}</h1>
 </div>
-<h2>Here are some examples of charts and controls: </h2>
-<app-dashboard></app-dashboard>
 
-
+<div class="ui-g">
+  <div class="ui-g-12 ui-md-3 ui-lg-2">
+    <p-panelMenu [model]="items" [style]="{'width':'100%'}"></p-panelMenu>
+  </div>
+  <div class="ui-g-12 ui-md-9 ui-lg-10">
+      <div *ngIf="page == '0'">
+          <app-panel></app-panel>
+      </div>
+      <div *ngIf="page == '2'">
+          <app-event-registration></app-event-registration>
+      </div>
+      <div *ngIf="page == '4'">
+        <app-dashboard></app-dashboard>
+      </div>
+  </div>
+</div>

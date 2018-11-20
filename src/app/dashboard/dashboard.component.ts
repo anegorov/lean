@@ -15,6 +15,9 @@ export class DashboardComponent implements OnInit {
   dataRadar: any;
   dataBar: any;
   dataLine: any;
+  items: any[];
+
+  title:string = "321";
 
   constructor() {
 
@@ -134,6 +137,48 @@ export class DashboardComponent implements OnInit {
   clicks: number = 0;
 
   ngOnInit() {
+
+    this.items = [
+      {
+          label: 'Lines', icon: 'fa fa-fw fa-check',
+          items: [
+              [
+                  {
+                      items: [{label: 'Line 1', command: "handleClick()"},
+                              {label: 'Line 2'},
+                              {label: 'Line 3'},
+                              {label: 'Line 4'}]
+                  }
+              ]
+          ]
+      },
+      {
+          label: 'Summary', icon: 'fa fa-fw fa-check',
+          items: [
+              [
+                  {
+                      label: 'Sum 1',
+                      items: [{label: 'Sum 1.1'},{label: 'Sum 1.2'}]
+                  },
+                  {
+                      label: 'Sum 2',
+                      items: [{label: 'Sum 2.1'},{label: 'Sum 2.2'}]
+                  }
+              ]
+          ]
+      },
+      {
+      label: 'Debug', icon: 'fa fa-fw fa-check',
+          items: [
+              [
+                  {
+                      items: [{label: 'Debug 1'},
+                              {label: 'Debug 2'}]
+                  }
+              ]
+          ]
+      },
+  ];
   }
 
   handleClick() {
